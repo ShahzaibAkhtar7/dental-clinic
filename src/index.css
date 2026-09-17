@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color system: "clinical warmth" ---- */
+  --color-ink: #0f322c;
+  --color-ink-soft: #1e463e;
+  --color-paper: #faf7f1;
+  --color-mist: #e9f1ec;
+  --color-mist-dark: #d7e6dd;
+  --color-coral: #e6604a;
+  --color-coral-dark: #c94b37;
+  --color-gold: #c69a2e;
+  --color-line: #dcd2bf;
+  --color-white: #ffffff;
+
+  /* ---- Type system ---- */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Work Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-coral);
+  color: var(--color-white);
+}
+
+/* Dotted arch motif used as a recurring signature divider */
+.arch-divider {
+  background-image: radial-gradient(circle, var(--color-line) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  height: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+}
